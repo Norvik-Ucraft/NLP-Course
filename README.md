@@ -8,6 +8,10 @@ algorithms currently available, this means we often don't have the option to cho
 Spacy works with a Pipeline object and the main idea here is that there is an `nlp()` function from spacy automatically 
 takes raw text and performs a series of operations to tag, parse, and describe the text data.
 
+Spacy will isolate punctuation that does not form an integral part of a word. Quotation marks, commas, and punctuation
+at the end of a sentence will be assigned their own token. However, punctuation that exists as part of an email address,
+website or numerical value will be kept as part of the token.
+
 ## What is NLTK?
 NLTK - Natural Language Toolkit is a very popular open source. It provides many functionalities, but includes less
 efficient implementations.
@@ -20,4 +24,14 @@ Natural Language Processing attempts to use a variety of techniques in order to 
 
 ## Tokenization
 The first step in processing text is to split up all the component parts (words & punctuation) into "tokens". These tokens
-are annotated inside the Doc object to contain descriptive information.
+are annotated inside the Doc object to contain descriptive information. \
+Tokens are the basic building blocks of a Doc object - everything that helps us understand the meaning of the text is
+derived from tokens and their relationship to one another. \
+`Doc` objects can be thought of as list of `token` objects. As such, individual tokens can be retrieved by index position,
+and spans of tokens can be retrieved through slicing. \
+Although `Doc` objects can be considered lists of tokens, _they do not support item reassignment_.
+
+## Named Entities
+Named Entities add another layer of context. The language model recognize that certain words are organizational names while
+others are locations, and still other combinations relate to money, dates, etc. Named entities are accessible through
+the `ents` property of a `Doc` object.
