@@ -53,3 +53,10 @@ One of the most common and effective stemming tools is _**Porter's Algorithm**_.
 word reduction, each with its own set of mapping rules. \
 _**Snowball**_ is the name of a stemming language, the algorithm used here is more acurately called the "English Stemmer"
 or "Porter2 Stemmer". It offers a slight improvment over the original Porter stemmer, both logic and speed.
+
+## Lemmatization
+In contrast to stemming, lemmatization looks beyond word reduction, and considers a language's  full vocabulary to apply
+a _morphological analysis_ to words. The lemma of 'was' is 'be' and the lemma of 'mice' is 'mouse'. Further, the lemma of 
+'meeting' might be 'meet' or 'meeting' depending on its use in a sentence. Note that lemmatization does not reduce words 
+to their most basic synonym. Although lemmatization looks at surrounding text to determine a given word's part of speech,
+it does not categorize phrases.
