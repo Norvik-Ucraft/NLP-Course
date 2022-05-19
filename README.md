@@ -44,3 +44,12 @@ that have a noun as their head. You can think of noun chunks as a noun plus the 
 Spacy includes a built-in visualization tool called _**displaCy**_. displacy is able to detect whether you're working in 
 a Jupyter notebook, and will return markup that can be rendered in a cell right away. When you export your notebook, the 
 visualizations will be included as HTML.
+
+## Stemming
+Stemming is a somewhat crude method for cataloging related words, it essentially chops off letters from the end until the 
+stem is reached. This works fairly well in most cases, but unfortunately English has many exceptions where a more 
+sophisticated process is required. \
+One of the most common and effective stemming tools is _**Porter's Algorithm**_. The algorithm employs five phases of
+word reduction, each with its own set of mapping rules. \
+_**Snowball**_ is the name of a stemming language, the algorithm used here is more acurately called the "English Stemmer"
+or "Porter2 Stemmer". It offers a slight improvment over the original Porter stemmer, both logic and speed.
