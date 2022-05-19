@@ -60,3 +60,7 @@ a _morphological analysis_ to words. The lemma of 'was' is 'be' and the lemma of
 'meeting' might be 'meet' or 'meeting' depending on its use in a sentence. Note that lemmatization does not reduce words 
 to their most basic synonym. Although lemmatization looks at surrounding text to determine a given word's part of speech,
 it does not categorize phrases.
+
+## Stop Words
+Words like 'a' and 'the' appear so frequently that they don't require tagging as thoroughly as nouns, verbs and modifiers.
+We call these stop words, and they can be filtered from the text to be processed.
