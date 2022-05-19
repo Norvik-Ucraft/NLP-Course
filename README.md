@@ -70,3 +70,8 @@ We call these stop words, and they can be filtered from the text to be processed
 Spacy offers a rule-matching tool called `Matcher` that allows you to build a library of token patterns, then match those 
 patterns against a Doc object to return a list of found matches. You can match on any part of the token including text and 
 annotations, and you can add multiple patterns to the same matcher.
+
+### Viewing Matches
+There are a few ways to fetch the text surrounding a match. The simplest is to grab a slice of tokens from the doc that
+is wider than the match. Another way is to first apply the `sentencizer` to the Doc, then iterate through the sentence 
+to the match point.
