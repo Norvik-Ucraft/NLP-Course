@@ -64,3 +64,9 @@ it does not categorize phrases.
 ## Stop Words
 Words like 'a' and 'the' appear so frequently that they don't require tagging as thoroughly as nouns, verbs and modifiers.
 We call these stop words, and they can be filtered from the text to be processed.
+
+## Vocabulary and Matching
+### Rule-based Matching
+Spacy offers a rule-matching tool called `Matcher` that allows you to build a library of token patterns, then match those 
+patterns against a Doc object to return a list of found matches. You can match on any part of the token including text and 
+annotations, and you can add multiple patterns to the same matcher.
