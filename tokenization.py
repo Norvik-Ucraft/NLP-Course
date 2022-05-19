@@ -1,5 +1,7 @@
 import spacy
 
+from spacy import displacy
+
 nlp = spacy.load('en_core_web_sm')
 
 mystring = '"We\'re moving to L.A.!"'
@@ -38,3 +40,21 @@ for ent in doc5.ents:
     print(ent.label_)
     print(str(spacy.explain(ent.label_)))
     print('\n')
+
+doc6 = nlp('Autonomous cars shift insurance liability toward manufactures.')
+
+for chunk in doc6.noun_chunks:
+    print(chunk.text)
+
+doc7 = nlp('Red cars do not carry higher insurance rates.')
+
+for chunk in doc7.noun_chunks:
+    print(chunk.text)
+
+doc8 = nlp('Apple is going to build a U.K. factory for $6 million.')
+
+# in case you use Jupyter notebook
+displacy.render(doc8, style='dep', jupyter=False, options={'distance': 110})
+
+# in case you work on Python script
+displacy.serve(doc8, style='ent')
