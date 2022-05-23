@@ -40,6 +40,10 @@ the `ents` property of a `Doc` object.
 Similar to `Doc.ents`, `Doc.noun_chunks` are another object property. Noun chunks are "_base noun phrase_" - flat phrases
 that have a noun as their head. You can think of noun chunks as a noun plus the words describing the noun.
 
+`Doc.noun_chunks` are _base noun phrases_: token spans that include the noun and words describing the noun. Noun chunks
+cannot be nested, cannot overlap, and do not involve prepositional phrases or relative clauses. Where `Doc.ents` rely on
+the **_ner_** pipeline component, `Doc.noun_chunks` are provided by the parser.
+
 ## Built-in Visualizers
 Spacy includes a built-in visualization tool called _**displaCy**_. displacy is able to detect whether you're working in 
 a Jupyter notebook, and will return markup that can be rendered in a cell right away. When you export your notebook, the 
@@ -109,3 +113,5 @@ monetary values, percentages, etc.
 * ent.end - The token span's "stop" index position in the Doc
 * ent.start_char - The entity text's "start" index position in the Doc
 * ent.end_char - The entity text's "stop" index position in the Doc
+
+While spaCy may not have built-in tool for counting, we can pass a conditional statement into a list comprehension.
