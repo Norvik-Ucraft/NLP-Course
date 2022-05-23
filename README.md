@@ -115,3 +115,9 @@ monetary values, percentages, etc.
 * ent.end_char - The entity text's "stop" index position in the Doc
 
 While spaCy may not have built-in tool for counting, we can pass a conditional statement into a list comprehension.
+
+## Visualizing Named Entity Recognition
+### Viewing Sentences Line by Line
+
+Unlike the **displaCy** dependency parse, the NER viewer has to take in a Doc object with an `ents` attribute.
+For this reason, we can't just pass a list of spans to `.render()`. We have to create a new Doc from each `span.text`.
