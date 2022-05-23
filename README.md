@@ -75,3 +75,21 @@ annotations, and you can add multiple patterns to the same matcher.
 There are a few ways to fetch the text surrounding a match. The simplest is to grab a slice of tokens from the doc that
 is wider than the match. Another way is to first apply the `sentencizer` to the Doc, then iterate through the sentence 
 to the match point.
+
+## Part of Speech Basics
+Processing raw text intelligently is difficult, most words are rare, and it's common for words that look completely
+different to mean almost the same thing. The same words in a different order can mean something completely different.
+Even splitting text into useful word-like units can be difficult in many languages. While it's possible to solve some
+problems starting from only the raw characters, it's usually better to use linguistic knowledge to add useful information.
+That's exactly what spacy is designed to do, you put in raw text, and get back a `Doc` object, that comes with variety
+of annotations. \
+
+### POS Tags
+In the English language, the same string of characters can have different meanings, even within the same sentence.
+For this reason, morphology is important. spaCy uses machine learning algorithms to best predict the use of a token in 
+a sentence.
+
+### Conting POS Tags
+The `Doc.count_by()` method accepts a specific token attribute as its argument, and returns a frequency count of the given
+attribute as a dictionary object. Keys in the dictionary are the integer values of the given attribute ID, and values
+are the frequency. Counts of zero are not included.
