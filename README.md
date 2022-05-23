@@ -89,7 +89,23 @@ In the English language, the same string of characters can have different meanin
 For this reason, morphology is important. spaCy uses machine learning algorithms to best predict the use of a token in 
 a sentence.
 
-### Conting POS Tags
+### Counting POS Tags
 The `Doc.count_by()` method accepts a specific token attribute as its argument, and returns a frequency count of the given
 attribute as a dictionary object. Keys in the dictionary are the integer values of the given attribute ID, and values
 are the frequency. Counts of zero are not included.
+
+## Named Entity Recognition (NER)
+spaCy has an `ner` pipeline component that identifies token spans fitting a predetermined set of named entities.
+These are available as the `ents` property of a `Doc` object. \
+Named-entity recognition (NER) seeks to locate and classify named entity mentions in unstrucutred text into pre-defined 
+categories such as the person names, organizations, locations, medical codes, time expressions, quantities,
+monetary values, percentages, etc.
+
+`Doc.ents` are token spans with their own set of annotations:
+* ent.text - The original entity text
+* ent.label - The entity type's hash value
+* ent.label_ - The entity type's string description
+* ent.start - The token span's "start" index position in the Doc
+* ent.end - The token span's "stop" index position in the Doc
+* ent.start_char - The entity text's "start" index position in the Doc
+* ent.end_char - The entity text's "stop" index position in the Doc
