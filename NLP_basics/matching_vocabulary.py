@@ -47,7 +47,7 @@ found_matches = matcher(doc2)
 
 matcher2 = PhraseMatcher(nlp.vocab)
 
-with open('data/reaganomics.txt') as file:
+with open('../data/reaganomics.txt') as file:
     doc3 = nlp(file.read())
 
 # create a list of match phrase
