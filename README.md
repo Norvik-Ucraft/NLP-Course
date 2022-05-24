@@ -121,3 +121,17 @@ While spaCy may not have built-in tool for counting, we can pass a conditional s
 
 Unlike the **displaCy** dependency parse, the NER viewer has to take in a Doc object with an `ents` attribute.
 For this reason, we can't just pass a list of spans to `.render()`. We have to create a new Doc from each `span.text`.
+
+## Sentence Segmentation
+`Doc.sents` _**is a generator.**_ That is, a Doc is not segmented until `doc.sents` is called. This means that, where you 
+could print the second Doc token with `print(doc[1])`, you can't call the "second Doc sentence" with `print(doc.sents[1])`.
+
+### Adding Rules
+spaCy's built-in `sentencizer` relies on the dependency parse and end-of-sentence punctuation to determine segmentation
+rules. We can add rules of our own, but they have to be added before the creation of the Doc object, as that is where the 
+parsing of segment start tokens happens. If we add a semicolon to our existing segmentation rules. This is, whenever the 
+sentencizer encounters a semicolon, the next token should start a new segment.
+
+### Changing the Rules
+In some cases we want to _replace_ spacy's default sentencizer with our own set of rules. We have the capability to do that
+so check the `sentence_segmentation.py` module.
